@@ -9,7 +9,8 @@ form.addEventListener("submit", async (e) => {
         alert("provide a city")
     }
     try {
-        const response = await fetch(`/api/weather?city=${encodeURIComponent(city)}`)
+        const url = `https://backendweatherapp-rfy6.onrender.com`
+        const response = await fetch(`${url}/api/weather?city=${encodeURIComponent(city)}`)
         const data = await response.json();
 
         if (!response.ok) {
